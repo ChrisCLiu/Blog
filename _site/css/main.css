@@ -2,6 +2,8 @@
  * Monochrome is a simple, responsive blog theme built for Jekyll.
  */
 /*- Base reset -*/
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -459,6 +461,9 @@ footer {
   text-align: center;
   padding: 0.6667em 0; }
 
+footer .love {
+  color: red; }
+
 /*
  * A Github stylesheet to highlight code snippet
  * https://github.com/mojombo/tpw/blob/master/css/syntax.css
@@ -719,3 +724,11 @@ footer {
 
 /* Literal.Number.Integer.Long */
 /*- Custom style -*/
+body {
+  font-family: "Montserrat", sans-serif; }
+
+.footer .love {
+  color: red; }
+
+body {
+  font-family: "Montserrat", sans-serif; }
