@@ -1,5 +1,5 @@
 # Logistic Regression
-Logistic regression is an approach to*classification* problem rather than a quantative prediction. More confusingly speeking, logistic regression is NOT used to solve regression problems.
+Logistic regression is an approach to *classification* problem rather than a quantative prediction. More confusingly speaking, logistic regression is NOT used to solve regression problems.
 
 Typically, the logistic regression is used to solve *binary classification* problem, that is, the output only have two levels, high or low, good or bad, be or not be, etc..
 
