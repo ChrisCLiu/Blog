@@ -17,7 +17,7 @@ In classification problem, we want the model to accept every input and gives out
 \begin{equation}
 \sigma (z) = \dfrac{1}{1+e^{-z}}
 \end{equation}
-and the curve shows as ![sigmoid function](./sigmoid.png)
+and the curve shows as ![sigmoid.png](https://ooo.0o0.ooo/2017/04/21/58f9cc4b6b257.png)
 
 The sigmoid function has a good property on derivative.
 
@@ -47,7 +47,7 @@ $$\hat{y}^{(i)} = \sigma(\theta^Tx^{(i)}) = \dfrac{1}{1+e^{\theta_0 + \sum\limit
 ## Coefficient Estimation
 In classification problem, we should expect the cost as large as possible if the classification is wrong. The pictures below gives a brief view of the cost.
 
-<img src="./cost2.png" width = "50%" /><img src="./cost1.png" width = "50%" />
+<img src="https://ooo.0o0.ooo/2017/04/21/58f9cc4b9518c.png" width = "50%" /><img src="https://ooo.0o0.ooo/2017/04/21/58f9cc4b952ba.png" width = "50%" />
 
 By using a small math trick, we could combine the two situation above together. Cost function could be shown as,
 
@@ -88,7 +88,7 @@ Though there are several extension of logistic regression to adjust it to multi-
 Overfitting problems is common in cost function in logistic regression model. 
 
 Following image shows *underfit*, *fit*, and *overfit* in sequence.
-![](./overfit.png)
+![overfit.png](https://ooo.0o0.ooo/2017/04/21/58f9cc4b9c99f.png)
 
 To overcome the overfit problem, there are two possible ways.
 
