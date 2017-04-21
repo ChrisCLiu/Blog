@@ -21,21 +21,21 @@
 
 </head>
 
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
 <body>
 	<div id="wrap">
 	  	
 	  	<!-- Navigation -->
 	  	<nav id="nav">
 	<div id="nav-list">
-		<a href="/blog//">Home</a>
+		<a href="/blog/">Home</a>
 
 		<!-- Nav pages -->
 	  
 	    
 	  
 	    
-	      <a href="/blog//about" title="About">About</a>
+	      <a href="/blog/about" title="About">About</a>
 	    
 	  
 	    
@@ -51,7 +51,7 @@
     
     <!-- Nav links -->
 	  <a href="https://chriscliu.github.io/">Personal Site</a>
-<a href="https://github.com/ChrisCLiu//">Github</a>
+<a target="_blank" href="https://github.com/ChrisCLiu//">Github</a>
 
 
 	</div>
@@ -78,7 +78,7 @@
         <header id="header" class="parent justify-spaceBetween">
   <div class="inner w100 relative">
     <span class="f-left">  
-      <a href="/blog/">
+      <a href="/blog">
         <h1>
           Hope<span>from</span>Inside
         </h1>
@@ -90,7 +90,7 @@
 	      
 	    
 	      
-	        <a href="/blog//about" title="About">About</a>
+	        <a href="/blog/about" title="About">About</a>
 	      
 	    
 	      
@@ -106,7 +106,7 @@
       
       <!-- Nav links -->
 	    <a href="https://chriscliu.github.io/">Personal Site</a>
-<a href="https://github.com/ChrisCLiu//">Github</a>
+<a target="_blank" href="https://github.com/ChrisCLiu//">Github</a>
 
     </span>
   </div>
@@ -127,8 +127,8 @@
 	<time datetime="2017-04-21T00:00:00+08:00" class="by-line">21 Apr 2017</time>
 	<div class="content">
 
-		<h1 id="logistic-regression">Logistic Regression</h1>
-<p>Logistic regression is an approach to<em>classification</em> problem rather than a quantative prediction. More confusingly speeking, logistic regression is NOT used to solve regression problems.</p>
+		
+<p>Logistic regression is an approach to <em>classification</em> problem rather than a quantative prediction. More confusingly speaking, logistic regression is NOT used to solve regression problems.</p>
 
 <p>Typically, the logistic regression is used to solve <em>binary classification</em> problem, that is, the output only have two levels, high or low, good or bad, be or not be, etc..</p>
 
@@ -153,7 +153,7 @@
 \begin{equation}
 \sigma (z) = \dfrac{1}{1+e^{-z}}
 \end{equation}
-and the curve shows as <img src="./sigmoid.png" alt="sigmoid function" /></p>
+and the curve shows as <img src="https://ooo.0o0.ooo/2017/04/21/58f9cc4b6b257.png" alt="sigmoid.png" /></p>
 
 <p>The sigmoid function has a good property on derivative.</p>
 
@@ -177,13 +177,14 @@ and the curve shows as <img src="./sigmoid.png" alt="sigmoid function" /></p>
 
 <p>where $\vec{x} = (1, x_1, x_2, …, x_n)^T$. The left hand side is called log-odds or logit.</p>
 
-<p>Therefore, the logistic regression can be modelled as,
-<script type="math/tex">\hat{y}^{(i)} = \sigma(\theta^Tx^{(i)}) = \dfrac{1}{1+e^{\theta_0 + \sum\limits_{j=1}^{n} \theta_j x_j^{(i)}}}</script></p>
+<p>Therefore, the logistic regression can be modelled as,</p>
+
+<script type="math/tex; mode=display">\hat{y}^{(i)} = \sigma(\theta^Tx^{(i)}) = \dfrac{1}{1+e^{\theta_0 + \sum\limits_{j=1}^{n} \theta_j x_j^{(i)}}}</script>
 
 <h2 id="coefficient-estimation">Coefficient Estimation</h2>
 <p>In classification problem, we should expect the cost as large as possible if the classification is wrong. The pictures below gives a brief view of the cost.</p>
 
-<p><img src="./cost2.png" width="50%" /><img src="./cost1.png" width="50%" /></p>
+<p><img src="https://ooo.0o0.ooo/2017/04/21/58f9cc4b9518c.png" width="50%" align="left" /><img src="https://ooo.0o0.ooo/2017/04/21/58f9cc4b952ba.png" width="50%" align="right" /></p>
 
 <p>By using a small math trick, we could combine the two situation above together. Cost function could be shown as,</p>
 
@@ -194,13 +195,19 @@ and the curve shows as <img src="./sigmoid.png" alt="sigmoid function" /></p>
 <h4 id="gradient-descent">Gradient Descent</h4>
 <p>Overall, the gradient descent algorithm could represented as</p>
 
-<p><script type="math/tex">\theta := \theta - \alpha \nabla J(\theta)</script>
-If we use the gradient descent method to optimize the coefficients, following are the steps.</p>
+<script type="math/tex; mode=display">\theta := \theta - \alpha \nabla J(\theta)</script>
 
-<p><script type="math/tex">\dfrac{\partial J(\theta)}{\partial \theta_j} = \dfrac{1}{m} \sum\limits_{i=1}^{m}(\hat y^{(i)}-y^{(i)})x^{(i)}_j</script>and<script type="math/tex">\dfrac{\partial J(\theta)}{\partial \theta}= \dfrac{1}{m} X^T(\vec{\hat{y}} -\vec{y})</script></p>
+<p>If we use the gradient descent method to optimize the coefficients, following are the steps.</p>
 
-<p>In every circle, we update $\theta$ by
-<script type="math/tex">\theta := \theta - \dfrac{\alpha}{m} \dfrac{\partial J(\theta)}{\partial \theta}</script></p>
+<script type="math/tex; mode=display">\dfrac{\partial J(\theta)}{\partial \theta_j} = \dfrac{1}{m} \sum\limits_{i=1}^{m}(\hat y^{(i)}-y^{(i)})x^{(i)}_j</script>
+
+<p>and</p>
+
+<script type="math/tex; mode=display">\dfrac{\partial J(\theta)}{\partial \theta}= \dfrac{1}{m} X^T(\vec{\hat{y}} -\vec{y})</script>
+
+<p>In every circle, we update $\theta$ by</p>
+
+<script type="math/tex; mode=display">\theta := \theta - \dfrac{\alpha}{m} \dfrac{\partial J(\theta)}{\partial \theta}</script>
 
 <h2 id="possible-extension">Possible Extension</h2>
 
@@ -224,7 +231,7 @@ If we use the gradient descent method to optimize the coefficients, following ar
 <p>Overfitting problems is common in cost function in logistic regression model.</p>
 
 <p>Following image shows <em>underfit</em>, <em>fit</em>, and <em>overfit</em> in sequence.
-<img src="./overfit.png" alt="" /></p>
+<img src="https://ooo.0o0.ooo/2017/04/21/58f9cc4b9c99f.png" alt="overfit.png" /></p>
 
 <p>To overcome the overfit problem, there are two possible ways.</p>
 
@@ -232,7 +239,7 @@ If we use the gradient descent method to optimize the coefficients, following ar
 <p>This may casue information lost, the features left should be carefully selected.</p>
 
 <h5 id="rugularization">Rugularization</h5>
-<p>Keep all the features and add a punishment item to cost function $J(\theta)$. Usually, we use L2 norm as the punishment. The cost function changes to</p>
+<p>Keep all the features and add a punishment item to cost function $J(\theta)$. Usually, we use L2 norm or <em>Ridge Regression</em> as the penalty. The cost function changes to</p>
 
 <script type="math/tex; mode=display">J(\theta) = \dfrac{1}{2m}(\sum\limits_{i=1}^{m}(\hat y^{(i)}- y^{(i)})^2 + \lambda \sum\limits_{j=1}^{n} \theta_j^2)</script>
 
@@ -261,8 +268,23 @@ If we use the gradient descent method to optimize the coefficients, following ar
 
 	    <!-- Script -->
       <script src="/blog/js/main.js"></script>	
-
+<script type="text/x-mathjax-config"> 
+ MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}}); 
+ </script> 
+ 
+  <script type="text/x-mathjax-config"> 
+ MathJax.Hub.Queue(function() { 
+ var all = MathJax.Hub.getAllJax(), i; 
+ for(i=0; i < all.length; i += 1) { 
+ all[i].SourceElement().parentNode.className += ' has-jax'; 
+ } 
+ }); 
+ </script> 
+ 
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> 
+ </script> 
 
 	</div>
+  
 </body>
 </html>

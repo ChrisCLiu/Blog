@@ -4,7 +4,7 @@
  <title>Blog - Xiao Liu</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <id>http://localhost:4000</id>
- <updated>2017-04-21T15:47:18+08:00</updated>
+ <updated>2017-04-21T20:18:03+08:00</updated>
  <author>
    <name>Xiao Liu</name>
    <uri>https://chriscliu.github.io</uri>
@@ -18,7 +18,7 @@
    <link href="http://localhost:4000/Logistic-Regression"/>
    <id>http://localhost:4000/Logistic-Regression</id>
    <updated>2017-04-21T00:00:00+08:00</updated>
-   <content type="html">&lt;h1 id=&quot;logistic-regression&quot;&gt;Logistic Regression&lt;/h1&gt; &lt;p&gt;Logistic regression is an approach to&lt;em&gt;classification&lt;/em&gt; problem rather than a quantative prediction. More confusingly speeking, logistic regression is NOT used to solve regression problems.&lt;/p&gt; &lt;p&gt;Typically, the logistic regression is used to solve &lt;em&gt;binary classification&lt;/em&gt; problem, that is, the output only have two levels, high or low, good...</content>
+   <content type="html">&lt;p&gt;Logistic regression is an approach to &lt;em&gt;classification&lt;/em&gt; problem rather than a quantative prediction. More confusingly speaking, logistic regression is NOT used to solve regression problems.&lt;/p&gt; &lt;p&gt;Typically, the logistic regression is used to solve &lt;em&gt;binary classification&lt;/em&gt; problem, that is, the output only have two levels, high or low, good or bad,...</content>
  </entry>
 
  

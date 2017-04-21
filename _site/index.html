@@ -21,21 +21,21 @@
 
 </head>
 
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
 <body>
 	<div id="wrap">
 	  	
 	  	<!-- Navigation -->
 	  	<nav id="nav">
 	<div id="nav-list">
-		<a href="/blog//">Home</a>
+		<a href="/blog/">Home</a>
 
 		<!-- Nav pages -->
 	  
 	    
 	  
 	    
-	      <a href="/blog//about" title="About">About</a>
+	      <a href="/blog/about" title="About">About</a>
 	    
 	  
 	    
@@ -51,7 +51,7 @@
     
     <!-- Nav links -->
 	  <a href="https://chriscliu.github.io/">Personal Site</a>
-<a href="https://github.com/ChrisCLiu//">Github</a>
+<a target="_blank" href="https://github.com/ChrisCLiu//">Github</a>
 
 
 	</div>
@@ -78,7 +78,7 @@
         <header id="header" class="parent justify-spaceBetween">
   <div class="inner w100 relative">
     <span class="f-left">  
-      <a href="/blog/">
+      <a href="/blog">
         <h1>
           Hope<span>from</span>Inside
         </h1>
@@ -90,7 +90,7 @@
 	      
 	    
 	      
-	        <a href="/blog//about" title="About">About</a>
+	        <a href="/blog/about" title="About">About</a>
 	      
 	    
 	      
@@ -106,7 +106,7 @@
       
       <!-- Nav links -->
 	    <a href="https://chriscliu.github.io/">Personal Site</a>
-<a href="https://github.com/ChrisCLiu//">Github</a>
+<a target="_blank" href="https://github.com/ChrisCLiu//">Github</a>
 
     </span>
   </div>
@@ -128,9 +128,9 @@
 	
 
 	  <li class="post">
-	  	<h2><a href="/blog//Logistic-Regression">Logistic Regression</a></h2>
+	  	<h2><a href="/blog/Logistic-Regression">Logistic Regression</a></h2>
       <time datetime="2017-04-21T00:00:00+08:00" class="by-line"> <i>21 Apr 2017</i> </time>
-	  	<p>Logistic Regression Logistic regression is an approach toclassification problem rather than a quantative prediction. More confusingly speeking, logistic regression is NOT used to solve regression problems. Typically, the logistic regression is used to solve binary classification problem, that is, the output only have two levels, high or low, good or...</p>
+	  	<p>Logistic regression is an approach to classification problem rather than a quantative prediction. More confusingly speaking, logistic regression is NOT used to solve regression problems. Typically, the logistic regression is used to solve binary classification problem, that is, the output only have two levels, high or low, good or bad,...</p>
 	  </li>
 
     
@@ -151,8 +151,23 @@
 
 	    <!-- Script -->
       <script src="/blog/js/main.js"></script>	
-
+<script type="text/x-mathjax-config"> 
+ MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}}); 
+ </script> 
+ 
+  <script type="text/x-mathjax-config"> 
+ MathJax.Hub.Queue(function() { 
+ var all = MathJax.Hub.getAllJax(), i; 
+ for(i=0; i < all.length; i += 1) { 
+ all[i].SourceElement().parentNode.className += ' has-jax'; 
+ } 
+ }); 
+ </script> 
+ 
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> 
+ </script> 
 
 	</div>
+  
 </body>
 </html>

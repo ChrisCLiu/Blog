@@ -1,4 +1,4 @@
-# Logistic Regression
+
 Logistic regression is an approach to *classification* problem rather than a quantative prediction. More confusingly speaking, logistic regression is NOT used to solve regression problems.
 
 Typically, the logistic regression is used to solve *binary classification* problem, that is, the output only have two levels, high or low, good or bad, be or not be, etc..
@@ -42,12 +42,13 @@ Combining equation (1) and (2) and take logarithm of both side we could get
 where $\vec{x} = (1, x_1, x_2, ..., x_n)^T$. The left hand side is called log-odds or logit.
 
 Therefore, the logistic regression can be modelled as,
+
 $$\hat{y}^{(i)} = \sigma(\theta^Tx^{(i)}) = \dfrac{1}{1+e^{\theta_0 + \sum\limits_{j=1}^{n} \theta_j x_j^{(i)}}} $$
 
 ## Coefficient Estimation
 In classification problem, we should expect the cost as large as possible if the classification is wrong. The pictures below gives a brief view of the cost.
 
-<img src="https://ooo.0o0.ooo/2017/04/21/58f9cc4b9518c.png" width = "50%" /><img src="https://ooo.0o0.ooo/2017/04/21/58f9cc4b952ba.png" width = "50%" />
+<img src="https://ooo.0o0.ooo/2017/04/21/58f9cc4b9518c.png" width = "50%" align="left" /><img src="https://ooo.0o0.ooo/2017/04/21/58f9cc4b952ba.png" width = "50%" align="right" />
 
 By using a small math trick, we could combine the two situation above together. Cost function could be shown as,
 
@@ -59,13 +60,19 @@ where $y$ and $\hat y$ are true and predicted vector. We can find that when one 
 Overall, the gradient descent algorithm could represented as 
 
 $$\theta := \theta - \alpha \nabla J(\theta)$$
+
 If we use the gradient descent method to optimize the coefficients, following are the steps.
 
 $$\dfrac{\partial J(\theta)}{\partial \theta_j} = \dfrac{1}{m} \sum\limits_{i=1}^{m}(\hat y^{(i)}-y^{(i)})x^{(i)}_j 
-$$and$$
+$$
+
+and
+
+$$
 \dfrac{\partial J(\theta)}{\partial \theta}= \dfrac{1}{m} X^T(\vec{\hat{y}} -\vec{y})$$
 
 In every circle, we update $\theta$ by
+
 $$\theta := \theta - \dfrac{\alpha}{m} \dfrac{\partial J(\theta)}{\partial \theta}$$
 
 ## Possible Extension
@@ -96,7 +103,7 @@ To overcome the overfit problem, there are two possible ways.
 This may casue information lost, the features left should be carefully selected.
 
 ##### Rugularization
-Keep all the features and add a punishment item to cost function $J(\theta)$. Usually, we use L2 norm as the punishment. The cost function changes to 
+Keep all the features and add a punishment item to cost function $J(\theta)$. Usually, we use L2 norm or *Ridge Regression* as the penalty. The cost function changes to 
 
 $$J(\theta) = \dfrac{1}{2m}(\sum\limits_{i=1}^{m}(\hat y^{(i)}- y^{(i)})^2 + \lambda \sum\limits_{j=1}^{n} \theta_j^2)$$
 
