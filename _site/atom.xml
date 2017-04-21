@@ -4,12 +4,23 @@
  <title>Blog - Xiao Liu</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <id>http://localhost:4000</id>
- <updated>2017-04-21T20:18:03+08:00</updated>
+ <updated>2017-04-21T20:23:33+08:00</updated>
  <author>
    <name>Xiao Liu</name>
    <uri>https://chriscliu.github.io</uri>
    <email>chrisliu9603@gmail.com</email>
  </author>
+
+ 
+
+ <entry>
+   <title>你好 世界</title>
+   <link href="http://localhost:4000/%E4%BD%A0%E5%A5%BD-%E4%B8%96%E7%95%8C"/>
+   <id>http://localhost:4000/你好-世界</id>
+   <updated>2017-04-21T00:00:00+08:00</updated>
+   <content type="html">
+</content>
+ </entry>
 
  
 
