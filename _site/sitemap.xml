@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://localhost:4000/blog/Logistic-Regression</loc>
+<loc>http://localhost:4000//logistic-regression</loc>
 <lastmod>2017-04-21T00:00:00+08:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/blog/%E4%BD%A0%E5%A5%BD-%E4%B8%96%E7%95%8C</loc>
+<loc>http://localhost:4000//xn----9o6a24b55yc58a</loc>
 <lastmod>2017-04-21T00:00:00+08:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/blog/404</loc>
+<loc>http://localhost:4000//404</loc>
 </url>
 <url>
-<loc>http://localhost:4000/blog/about</loc>
+<loc>http://localhost:4000//about</loc>
 </url>
 <url>
-<loc>http://localhost:4000/blog/</loc>
+<loc>http://localhost:4000//</loc>
 </url>
 </urlset>
