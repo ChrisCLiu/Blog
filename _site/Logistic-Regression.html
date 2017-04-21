@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- Meta -->
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+	<meta name="generator" content="Jekyll">
+
+	<title>Logistic Regression</title>
+  <meta name="description" content="A blog for sharing thoughts on technology, science and insights at TheReviewIndex.">
+
+	<!-- CSS & fonts -->
+	<link rel="stylesheet" href="/blog/css/main.css">
+
+	<!-- RSS -->
+	<link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" />
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+
+</head>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<body>
+	<div id="wrap">
+	  	
+	  	<!-- Navigation -->
+	  	<nav id="nav">
+	<div id="nav-list">
+		<a href="/blog//">Home</a>
+
+		<!-- Nav pages -->
+	  
+	    
+	  
+	    
+	      <a href="/blog//about" title="About">About</a>
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+    
+    <!-- Nav links -->
+	  <a href="https://chriscliu.github.io/">Personal Site</a>
+<a href="https://github.com/ChrisCLiu//">Github</a>
+
+
+	</div>
+  
+  <!-- Nav footer -->
+	
+	  <footer>
+	
+	<span>version 1.0.0</span>
+
+</footer>
+	
+
+</nav>
+
+    
+    <!-- Icon menu -->
+	  <a id="nav-menu">
+	  	<div id="menu"></div>
+	  </a>
+
+      <!-- Header -->
+      
+        <header id="header" class="parent justify-spaceBetween">
+  <div class="inner w100 relative">
+    <span class="f-left">  
+      <a href="/blog/">
+        <h1>
+          Hope<span>from</span>Inside
+        </h1>
+      </a>
+    </span>
+    <span id="nav-links" class="absolute right bottom">
+      <!-- Nav pages -->
+	    
+	      
+	    
+	      
+	        <a href="/blog//about" title="About">About</a>
+	      
+	    
+	      
+	    
+	      
+	    
+	      
+	    
+	      
+	    
+	      
+	    
+      
+      <!-- Nav links -->
+	    <a href="https://chriscliu.github.io/">Personal Site</a>
+<a href="https://github.com/ChrisCLiu//">Github</a>
+
+    </span>
+  </div>
+</header>
+
+
+
+
+      
+
+    <!-- Main content -->
+	  <div id="container">
+		  
+		<main>
+
+			<article id="post-page">
+	<h2>Logistic Regression</h2>		
+	<time datetime="2017-04-21T00:00:00+08:00" class="by-line">21 Apr 2017</time>
+	<div class="content">
+
+		<h1 id="logistic-regression">Logistic Regression</h1>
+<p>Logistic regression is an approach to<em>classification</em> problem rather than a quantative prediction. More confusingly speeking, logistic regression is NOT used to solve regression problems.</p>
+
+<p>Typically, the logistic regression is used to solve <em>binary classification</em> problem, that is, the output only have two levels, high or low, good or bad, be or not be, etc..</p>
+
+<ul>
+  <li><em>Pros</em>
+    <ul>
+      <li>Easy to understand and complete in code;</li>
+      <li>Requires little on computing power.</li>
+    </ul>
+  </li>
+  <li><em>Cons</em>
+    <ul>
+      <li>Easily get <a href="https://en.wikipedia.org/wiki/Overfitting"><em>overfitting</em></a></li>
+      <li>Low accuracy at <em>rapid growth part</em></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="model">Model</h2>
+<h3 id="sigmoid-function">Sigmoid Function</h3>
+<p>In classification problem, we want the model to accept every input and gives out a possibility of a certain class that the inputs indicates. <em>Unit step function</em> is a choice but it is hard for us to handle the step. <em>Sigmoid function</em> has similar property but a much gentle way of the step.
+\begin{equation}
+\sigma (z) = \dfrac{1}{1+e^{-z}}
+\end{equation}
+and the curve shows as <img src="./sigmoid.png" alt="sigmoid function" /></p>
+
+<p>The sigmoid function has a good property on derivative.</p>
+
+<script type="math/tex; mode=display">\sigma (z)'= \sigma (z)(1-\sigma (z))</script>
+
+<p>Note that $\sigma(z)$ can be recognized as the posibility for one certain class.</p>
+
+<h3 id="decision-boundary">Decision Boundary</h3>
+<p>In most cases, we treat two classes with equal significance and therefore, we use 0.5 as our decision boundary. That is, $\sigma(z) \ge 0.5 \rightarrow \hat{y} = 1$ and $\sigma(z) &lt; 0.5 \rightarrow \hat y = 0$</p>
+
+<h3 id="the-logistic-model">The Logistic Model</h3>
+<p>The input of sigmoid function is denoted as $z$ and given as following,
+\begin{equation}
+	z = \theta_0 + \sum\limits_{j=1}^{n} \theta_i x_j^{(i)}
+\end{equation}</p>
+
+<p>Combining equation (1) and (2) and take logarithm of both side we could get 
+\begin{equation}
+	log(\dfrac{\sigma(x^{(i)})}{1-\sigma (x^{(i)})}) = \theta_0 + \sum\limits_{j=1}^{n} \theta_i x_j^{(i)}
+\end{equation}</p>
+
+<p>where $\vec{x} = (1, x_1, x_2, …, x_n)^T$. The left hand side is called log-odds or logit.</p>
+
+<p>Therefore, the logistic regression can be modelled as,
+<script type="math/tex">\hat{y}^{(i)} = \sigma(\theta^Tx^{(i)}) = \dfrac{1}{1+e^{\theta_0 + \sum\limits_{j=1}^{n} \theta_j x_j^{(i)}}}</script></p>
+
+<h2 id="coefficient-estimation">Coefficient Estimation</h2>
+<p>In classification problem, we should expect the cost as large as possible if the classification is wrong. The pictures below gives a brief view of the cost.</p>
+
+<p><img src="./cost2.png" width="50%" /><img src="./cost1.png" width="50%" /></p>
+
+<p>By using a small math trick, we could combine the two situation above together. Cost function could be shown as,</p>
+
+<script type="math/tex; mode=display">J(\theta) = \dfrac{1}{m}(-y^Tlog(\hat y) - (1-y)^Tlog(1-\hat y))</script>
+
+<p>where $y$ and $\hat y$ are true and predicted vector. We can find that when one element in $y$ is 0, then we will messure how far is the corresponding esitimated value from 0 and vice versa. Only one item in $J(\theta)$ exists given a certain $y^{(i)}$. Logarithm is used to avoid computation among large numbers.</p>
+
+<h4 id="gradient-descent">Gradient Descent</h4>
+<p>Overall, the gradient descent algorithm could represented as</p>
+
+<p><script type="math/tex">\theta := \theta - \alpha \nabla J(\theta)</script>
+If we use the gradient descent method to optimize the coefficients, following are the steps.</p>
+
+<p><script type="math/tex">\dfrac{\partial J(\theta)}{\partial \theta_j} = \dfrac{1}{m} \sum\limits_{i=1}^{m}(\hat y^{(i)}-y^{(i)})x^{(i)}_j</script>and<script type="math/tex">\dfrac{\partial J(\theta)}{\partial \theta}= \dfrac{1}{m} X^T(\vec{\hat{y}} -\vec{y})</script></p>
+
+<p>In every circle, we update $\theta$ by
+<script type="math/tex">\theta := \theta - \dfrac{\alpha}{m} \dfrac{\partial J(\theta)}{\partial \theta}</script></p>
+
+<h2 id="possible-extension">Possible Extension</h2>
+
+<h4 id="logit">Logit</h4>
+
+<p>Recall the equation (3), we get $log(\dfrac{\sigma(x^{(i)})}{1-\sigma (x^{(i)})})$. This is so called logit, or log-odds. For more information, <a href="https://en.wikipedia.org/wiki/Logistic_regression#Logistic_function.2C_odds.2C_odds_ratio.2C_and_logit">see wikipedia</a>.</p>
+
+<h4 id="linear-discriminant-analysis">Linear Discriminant Analysis</h4>
+<p>Though there are several extension of logistic regression to adjust it to multi-class classification problem, Linear Discriminant Analysis is more popular on solving such problems. For more information about LNA, <a href="./Linear_Discriminant_Analysis.html">click here</a>. For more information about Multicalss Classification Logistic Regression, <a href="https://en.wikipedia.org/wiki/Multinomial_logistic_regression">see wikipedia</a></p>
+
+<h4 id="other-logistic-regressions">Other Logistic Regressions</h4>
+<ul>
+  <li><a href="https://en.wikipedia.org/wiki/Ordered_logistic_regression">Ordered Logistic Regression</a> handles ordinal dependent variables</li>
+  <li><a href="https://en.wikipedia.org/wiki/Conditional_logistic_regression">Conditional Logistic Regression</a> handles matched or stratified data when the strata are small. It is mostly used in the analysis of observational studies</li>
+  <li><a href="https://en.wikipedia.org/wiki/Conditional_random_field">Conditional Random Field</a> apply logistic model to sets of interdependent variables.</li>
+</ul>
+
+<h2 id="potential-problems">Potential Problems</h2>
+
+<h4 id="overfitting">Overfitting</h4>
+<p>Overfitting problems is common in cost function in logistic regression model.</p>
+
+<p>Following image shows <em>underfit</em>, <em>fit</em>, and <em>overfit</em> in sequence.
+<img src="./overfit.png" alt="" /></p>
+
+<p>To overcome the overfit problem, there are two possible ways.</p>
+
+<h5 id="reduce-the-number-of-features">Reduce the number of features.</h5>
+<p>This may casue information lost, the features left should be carefully selected.</p>
+
+<h5 id="rugularization">Rugularization</h5>
+<p>Keep all the features and add a punishment item to cost function $J(\theta)$. Usually, we use L2 norm as the punishment. The cost function changes to</p>
+
+<script type="math/tex; mode=display">J(\theta) = \dfrac{1}{2m}(\sum\limits_{i=1}^{m}(\hat y^{(i)}- y^{(i)})^2 + \lambda \sum\limits_{j=1}^{n} \theta_j^2)</script>
+
+<p>and corresponding update of theta changes to</p>
+
+<script type="math/tex; mode=display">\theta_j := \theta_j - \dfrac{\alpha}{m}(\sum\limits_{i=1}^{m}(\hat y^{(i)}- y^{(i)})x_j^{(i)} + \lambda \theta_j)</script>
+
+<p>where $\lambda$ is punishment coeffiencient. A larger $\lambda$ punish the model harder and it may lead to underfitting problem, so a proper selection of $\lambda$ is necessary.</p>
+
+		
+	</div>
+</article>
+
+
+
+	  </main>
+		
+		  <!-- Pagination links -->
+      
+
+	  </div>
+	    
+	    <!-- Footer -->
+	    <footer><span>&copy; 2017 - Xiao Liu <span class="love">❤</span> SJTU</footer>
+
+
+	    <!-- Script -->
+      <script src="/blog/js/main.js"></script>	
+
+
+	</div>
+</body>
+</html>

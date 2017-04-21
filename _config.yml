@@ -1,14 +1,16 @@
 # Site settings
-title: Blog - technology and science at TheReviewIndex
+title: Blog - Xiao Liu
 description: "A blog for sharing thoughts on technology, science and insights at TheReviewIndex."
-url: "http://www.thereviewindex.github.io/blog"
+url: https://chriscliu.github.io/
+homepage: https://chriscliu.github.io/
+github: https://github.com/ChrisCLiu/
 author:
-  name: "The Review Index"
-  email: "root@thereviewindex.com"
-  url: "https://thereviewindex.com"
+  name: "Xiao Liu"
+  email: "chrisliu9603@gmail.com"
+  url: "https://chriscliu.github.io"
 
 # Build settings
-baseurl: /blog # Change this to your relative path (ex: /blog/), or leave just a /
+baseurl: /blog/ # Change this to your relative path (ex: /blog/), or leave just a /
 markdown: kramdown
 source: .
 destination: ./_site
