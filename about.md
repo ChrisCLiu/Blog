@@ -6,6 +6,7 @@ description: TheReviewIndex aspires to simplify the discovery and research proce
 
 
 ## About 
+
 你好，我是刘晓，这里是我的博客。
 
 建立这个博客的原因起于几天前的复习经历。我将自己复习过的知识整理成为一篇篇markdown并打算发表在CSDN等国内的博客平台上，然而让我吃惊的是我发布的博客需要经过审核才能对公众可见。这让我有一些不快，在查询国内各个博客发布平台后，我决定建立自己的主页，将我的博客发布于此。
