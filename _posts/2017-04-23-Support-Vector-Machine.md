@@ -53,7 +53,7 @@ $ p^{ * } $ and $d^{ * } $ is the optimization solution to original problem and 
 
 We call $\Delta = p^{ * } - d^{ * } $ as ***duality gap***, when $\Delta$ is 0, we call the problems have ***strong duality***. If and only if at least one possible solution exsits, that is, we have strong duality, then the KKT condition must be satisfied.
 
-##### KTT Condition
+##### KKT Condition
 > 
 > If we have a constaint optimization problem defined as below,
 > 
