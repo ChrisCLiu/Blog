@@ -97,11 +97,11 @@ $$ b^* = \dfrac{ \max_{i:\ y^{(i)}=-1} \omega^{ * T} x^{(i)} + \min_{i:y^{(i)}=1
 ### Kernel Function & Non-Linearity
 Obviously, our SVM now can only handle the linear classification problem. When the data is not linear classified, we introduce kernel function $\kappa(·,·)$. kernel function map the low-dimentional data into a higher dimention, therefore, if map properly, the data will be linear claasifiable.
 
-Take a simple example, say, we have a function $\phi(x) in \mathbb{R}^5$. Data on $\mathbb{R}^2$ are distributed as two concentric circles, the features are $X_1$ and $X_2$. Then  $\varphi(X_1, X_2) = \sum\limits_{i=1}^5\alpha_iZ_i + \alpha_0 = 0$ where $Z_1 = X_1,\ Z_2 = X_2,\ Z_3 = X_1^2,\ Z_4 = X_2^2,$ and $Z_5 = X_1X_2$. Hence, the data becomes linear classifiable. Therefore, we only need to calculate $(\phi(x)^{(i)})^T\phi(x)^{(j)}$ instead of $(x^{(i)})^Tx^{(j)}$.
+Take a simple example, say, we have a function $\phi(x)$ in $\mathbb{R}^5$. Data on $\mathbb{R}^2$ are distributed as two concentric circles, the features are $X_1$ and $X_2$. Then  $\varphi(X_1, X_2) = \sum\limits_{i=1}^5\alpha_iZ_i + \alpha_0 = 0$ where $Z_1 = X_1,\ Z_2 = X_2,\ Z_3 = X_1^2,\ Z_4 = X_2^2,$ and $Z_5 = X_1X_2$. Hence, the data becomes linear classifiable. Therefore, we only need to calculate $(\phi(x)^{(i)})^T\phi(x)^{(j)}$ instead of $(x^{(i)})^Tx^{(j)}$.
 
 However, there is an obvious problem -- the calculation. The map function will no doubt lead to a dimensional disaster. Therefore, we need kernel function.
 
-Take a simple example. we assume $x_1 = (\eta_1, \eta_2)$ and $x_2 = {\xi_1,\xi_2}$. $\phi(·)$ is a map from \mathbb{R}^2 to \mathbb{R}^5 as introduced above$.
+Take a simple example. we assume $x_1 = (\eta_1, \eta_2)$ and $x_2 = {\xi_1,\xi_2}$. $\phi(·)$ is a map from $\mathbb{R}^2$ to $\mathbb{R}^5$ as introduced above.
 
 $<\phi(x_1),\phi(x_2)> = \eta_1\xi_1 + \eta_1^2\xi_1^2 + \eta_2\xi_2 + \eta_2^2\xi_2^2 + \eta_1\eta_2\xi_1\xi_2$
 
@@ -129,7 +129,7 @@ $$ y^{(i)} (\omega^Tx^{(i)}+b) \ge 1-\xi_i$$
 
 $\xi_i$ allows data point $x^{(i)}$ to be away from the boundary, but we still need them to be as small as possible, therefore, in origin goal, we need add one more term,
 
-$$min \dfrac{1}{2}\mid\mid\omega\mid\mid^2 + C\sum\limits_{i=1}^m \xi_i\quad$$
+$$\min\ \dfrac{1}{2}\mid\mid\omega\mid\mid^2 + C\sum\limits_{i=1}^m \xi_i\quad$$
 
 $$s.t.\ y^{(i)}(\omega^Tx^{(i)}+b)\ge 1-\xi_i,\ \text{and}\ \xi_i\ge 0 \quad i=1,2,...m$$ 
 
