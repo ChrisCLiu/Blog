@@ -2,9 +2,9 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>Blog - Xiao Liu</title>
- <link href="http://localhost:4000/atom.xml" rel="self"/>
- <id>http://localhost:4000</id>
- <updated>2017-04-21T23:28:23+08:00</updated>
+ <link href="http://localhost:4002/atom.xml" rel="self"/>
+ <id>http://localhost:4002</id>
+ <updated>2017-04-28T12:06:29+08:00</updated>
  <author>
    <name>Xiao Liu</name>
    <uri>https://chriscliu.github.io</uri>
@@ -14,9 +14,29 @@
  
 
  <entry>
+   <title>Regular Expression</title>
+   <link href="http://localhost:4002/Regular-Expression"/>
+   <id>http://localhost:4002/Regular-Expression</id>
+   <updated>2017-04-27T00:00:00+08:00</updated>
+   <content type="html">&lt;p&gt;Regular Expression (aka &lt;em&gt;regex&lt;/em&gt; or &lt;em&gt;regexp&lt;/em&gt;) is a sequence of characters that defines a certain search pattern to match a certain amount of text. The name &lt;em&gt;regular&lt;/em&gt; is from related mathematical theory, we will not mention that in this blog.&lt;/p&gt; &lt;h2 id=&quot;engine&quot;&gt;Engine&lt;/h2&gt; &lt;p&gt;Generally, we have two kinds of regular expression...</content>
+ </entry>
+
+ 
+
+ <entry>
+   <title>Support Vector Machine</title>
+   <link href="http://localhost:4002/Support-Vector-Machine"/>
+   <id>http://localhost:4002/Support-Vector-Machine</id>
+   <updated>2017-04-23T00:00:00+08:00</updated>
+   <content type="html">&lt;p&gt;Support vector machine is a kind of advanced classification method. Basic SVM is used as a binary classification model. Its main propose is finding a linear expression of features and saperating datas into two classification as far as possible. That is, SVM tries to find a hyperplane that maximize the...</content>
+ </entry>
+
+ 
+
+ <entry>
    <title>Logistic Regression</title>
-   <link href="http://localhost:4000/Logistic-Regression"/>
-   <id>http://localhost:4000/Logistic-Regression</id>
+   <link href="http://localhost:4002/Logistic-Regression"/>
+   <id>http://localhost:4002/Logistic-Regression</id>
    <updated>2017-04-21T00:00:00+08:00</updated>
    <content type="html">&lt;p&gt;Logistic regression is an approach to &lt;em&gt;classification&lt;/em&gt; problem rather than a quantative prediction. More confusingly speaking, logistic regression is NOT used to solve regression problems.&lt;/p&gt; &lt;p&gt;Typically, the logistic regression is used to solve &lt;em&gt;binary classification&lt;/em&gt; problem, that is, the output only have two levels, high or low, good or bad,...</content>
  </entry>

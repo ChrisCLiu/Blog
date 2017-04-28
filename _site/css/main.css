@@ -346,23 +346,61 @@ blockquote {
       position: static; } }
 
 #container {
-  margin: 0 auto; }
+  margin: 0 auto;
+  padding-top: 5em; }
 
 #header {
   border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+  z-index: 999;
   text-align: center;
   margin-bottom: 3em;
   height: 5em;
-  position: relative; }
+  position: fixed;
+  min-width: 980px;
+  max-width: 1000px;
+  background-color: white; }
   #header a {
     text-decoration: none;
     display: inline-block; }
   #header div {
-    margin: 0 auto; }
+    margin: 0 auto;
+    align: right;
+    min-width: 970px;
+    max-width: 990px;
+    background-color: white;
+    margin-right: 1em; }
   #header h1 {
     font-size: 2em;
     padding-bottom: 0; }
     #header h1 span {
+      color: rgba(0, 0, 0, 0.6);
+      font-weight: 300; }
+
+#header-page {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+  z-index: 999;
+  text-align: center;
+  margin-bottom: 3em;
+  height: 3em;
+  position: fixed;
+  min-width: 980px;
+  max-width: 1000px;
+  background-color: white; }
+  #header-page a {
+    text-decoration: none;
+    display: inline-block; }
+  #header-page div {
+    margin: 0 auto;
+    align: right;
+    min-width: 970px;
+    max-width: 990px;
+    background-color: white;
+    margin-right: 1em;
+    margin-bottom: 0.5em; }
+  #header-page h1 {
+    font-size: 2em;
+    padding-bottom: 0; }
+    #header-page h1 span {
       color: rgba(0, 0, 0, 0.6);
       font-weight: 300; }
 
