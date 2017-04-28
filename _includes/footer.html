@@ -1,1 +1,14 @@
+<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $("totop").click(function () { 
+        var speed = 500;//滑动的速度
+        $('html,body').animate({ scrollTop: 0 }, speed);//去顶部
+        //$('html,body').animate({ scrollTop: $('#footer').offset().top }, speed);//去底部 
+});
+});
+</script>
+
+<a href="#top" data-scroll><totop>Back to Top</totop></a>
+
 <footer><span>&copy; 2017 - Xiao Liu <span class="love">❤</span> SJTU</footer>
