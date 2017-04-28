@@ -11,6 +11,15 @@
   height: 24px;
 }
 
+@mixin icon-page-position($position) {
+  display: block;
+  position: fixed;
+  top: 15px;
+  #{$position}: 25px;
+  z-index: 10;
+  height: 24px;
+}
+
 @mixin open($x) {
 	-webkit-transform: translateX($x);
      -moz-transform: translateX($x);

@@ -65,6 +65,7 @@
 
 #nav-menu {
   @include icon-position(right);
+  z-index: 1000;
   @media (min-width: 940px) {
     display:none;
   }
@@ -81,7 +82,67 @@
   height: 4px;
   width: 1.5em;
   background-color: $text-color;
+  z-index: 1000;
   margin-top: 8px;
+  &:after, &:before {
+    content: "";
+    display: block;
+    position: relative;
+    height: 4px;
+    width: 1.5em;
+    background-color: $text-color;
+    transition: all 0.3s ease-in;
+  }
+  &:before {
+    top: -8px;
+  }
+  &:after {
+    top: 4px;
+  }
+  &.btn-close {
+    background: none;
+  }
+  &.btn-close:before {
+    top: 0;
+    -webkit-transform: rotate(-45deg);
+       -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    background-color: $text-color;
+  }
+  &.btn-close:after {
+    top: -4px;
+    -webkit-transform: rotate(45deg);
+       -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+    background-color: $text-color;
+  }
+}
+
+/* page menu*/
+#nav-page-menu {
+  @include icon-page-position(right);
+  z-index: 1000;
+  top: 15px;
+  @media (min-width: 940px) {
+    display:none;
+  }
+}
+
+#nav-page-menu-left {
+  @include icon-page-position(left);
+  @media (min-width: 940px) {
+    display:none;
+  }
+}
+
+#page-menu{
+  height: 4px;
+  width: 1.5em;
+  background-color: $text-color;
+  z-index: 1000;
+  margin-top: 4px;
   &:after, &:before {
     content: "";
     display: block;

@@ -287,7 +287,8 @@ blockquote {
   top: 35px;
   right: 25px;
   z-index: 10;
-  height: 24px; }
+  height: 24px;
+  z-index: 1000; }
   @media (min-width: 940px) {
     #nav-menu {
       display: none; } }
@@ -307,6 +308,7 @@ blockquote {
   height: 4px;
   width: 1.5em;
   background-color: #333333;
+  z-index: 1000;
   margin-top: 8px; }
   #menu:after, #menu:before {
     content: "";
@@ -330,6 +332,66 @@ blockquote {
     transform: rotate(-45deg);
     background-color: #333333; }
   #menu.btn-close:after {
+    top: -4px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    background-color: #333333; }
+
+/* page menu*/
+#nav-page-menu {
+  display: block;
+  position: fixed;
+  top: 15px;
+  right: 25px;
+  z-index: 10;
+  height: 24px;
+  z-index: 1000;
+  top: 15px; }
+  @media (min-width: 940px) {
+    #nav-page-menu {
+      display: none; } }
+
+#nav-page-menu-left {
+  display: block;
+  position: fixed;
+  top: 15px;
+  left: 25px;
+  z-index: 10;
+  height: 24px; }
+  @media (min-width: 940px) {
+    #nav-page-menu-left {
+      display: none; } }
+
+#page-menu {
+  height: 4px;
+  width: 1.5em;
+  background-color: #333333;
+  z-index: 1000;
+  margin-top: 4px; }
+  #page-menu:after, #page-menu:before {
+    content: "";
+    display: block;
+    position: relative;
+    height: 4px;
+    width: 1.5em;
+    background-color: #333333;
+    transition: all 0.3s ease-in; }
+  #page-menu:before {
+    top: -8px; }
+  #page-menu:after {
+    top: 4px; }
+  #page-menu.btn-close {
+    background: none; }
+  #page-menu.btn-close:before {
+    top: 0;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    background-color: #333333; }
+  #page-menu.btn-close:after {
     top: -4px;
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
