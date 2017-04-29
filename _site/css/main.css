@@ -802,6 +802,13 @@ footer .love {
 body {
   font-family: "Montserrat", sans-serif; }
 
+code {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 14px;
+  letter-spacing: 1px;
+  background-color: #eeeeee;
+  color: #2f4f4f; }
+
 .footer .love {
   color: red; }
 

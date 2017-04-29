@@ -132,17 +132,17 @@
 
 <ul>
   <li>
-    <p><strong>DFA</strong> DFA is based on the text itself, it ensures that the longest possible string will be matched. <strong><em>MySQL</em></strong> use DFA engine.</p>
+    <p><strong>DFA</strong>. DFA is based on the text itself, it ensures that the longest possible string will be matched. <strong><em>MySQL</em></strong> use DFA engine.</p>
   </li>
   <li>
-    <p><strong>NFA</strong> NFA is based on the regular expression, it accepts the first match it receives and ignore others, maybe the longer match. This “greedy” recursion matching method will be slow if the worst case (many choices matches the different branches in regular expression) happens. <strong><em>Python</em></strong>, <strong><em>Java</em></strong> use NFA engine.</p>
+    <p><strong>NFA</strong>. NFA is based on the regular expression, it accepts the first match it receives and ignore others, maybe the longer match. This “greedy” recursion matching method will be slow if the worst case (many choices matches the different branches in regular expression) happens. <strong><em>Python</em></strong>, <strong><em>Java</em></strong> use NFA engine.</p>
   </li>
 </ul>
 
 <h4 id="a-simple-example">A Simple Example</h4>
-<p>Take string ‘blog.xliu.info’ for an example, the regular expression is <code class="highlighter-rouge">xl(iu|ui)\.[Ii]n*</code>.</p>
+<p>Take string ‘blog.xliu.info’ for an example, the regular expression is <code class="highlighter-rouge">/xl(iu|ui)\.[Ii]n*/</code>.</p>
 
-<p>DFA reads the string and match the text to the expression. That is, read ‘b’, give up, then ‘l’ give up, …, until it finds that ‘x’ matches the first metacharacter of the regular expression. After DFA finds ‘x’, it will read ‘l’ to check if it still matches the expression. Finally, DFA will find ‘xliu.in’.</p>
+<p>DFA reads the string and match the text to the expression. That is, read ‘b’, give up, then ‘l’ give up, …, until it finds that ‘x’ matches the first meta-character of the regular expression. After DFA finds ‘x’, it will read ‘l’ to check if it still matches the expression. Finally, DFA will find ‘xliu.in’.</p>
 
 <p>NFA, on the other hand, reads the regular expression. That is, it first read ‘x’ in regular expression and find it in the string, then finds ‘l’ in it, then ‘iu’, if not found, find ‘ui’. Finally, NFA will find ‘xliu.in’.</p>
 
@@ -150,22 +150,103 @@
 
 <h2 id="basic-usage">Basic Usage</h2>
 
+<h4 id="anchors">Anchors</h4>
 <ul>
-  <li><code class="highlighter-rouge">\</code>	Escape character, transfer next character to a special character. <code class="highlighter-rouge">\n</code> will match a line break;</li>
-  <li><code class="highlighter-rouge">^</code> Match the start point of the string;</li>
-  <li><code class="highlighter-rouge">$</code> Match the end point of the string;</li>
-  <li><code class="highlighter-rouge">*</code> Match the previous character zero or several times;</li>
-  <li><code class="highlighter-rouge">+</code> Match the previous character one or several times;</li>
-  <li><code class="highlighter-rouge">?</code> Match the previous character zero or one time;</li>
-  <li><code class="highlighter-rouge">?</code> Match in a un-greedy way if it follows other patern character.</li>
-  <li><code class="highlighter-rouge"><span class="p">{</span><span class="err">n</span><span class="p">}</span></code> Match the previous character <strong>exactly</strong> n times;</li>
-  <li><code class="highlighter-rouge"><span class="p">{</span><span class="err">n,</span><span class="p">}</span></code> Match the previous character <strong>at least</strong> n times;</li>
-  <li>
-    <p><code class="highlighter-rouge"><span class="p">{</span><span class="err">n,m</span><span class="p">}</span></code>	Match the previous character <strong>at least</strong> n times and <strong>at most</strong> m times;</p>
-  </li>
-  <li><code class="highlighter-rouge">.</code> Match any characters without <code class="highlighter-rouge">\n</code>.</li>
+  <li><code class="highlighter-rouge">\</code>	<strong>Escape Indicator</strong>. Transfer next character to a special character. For example, <code class="highlighter-rouge">/\n/</code> will match a line break;</li>
+  <li><code class="highlighter-rouge">^</code> <strong>Beginning</strong>. Match the start point of the string;</li>
+  <li><code class="highlighter-rouge">$</code> <strong>Ending</strong>. Match the end point of the string;</li>
+  <li><code class="highlighter-rouge">.</code> <strong>Dot</strong>. Match any characters without <code class="highlighter-rouge">\n</code>.</li>
 </ul>
 
+<h4 id="quantifier">Quantifier</h4>
+<ul>
+  <li><code class="highlighter-rouge">*</code> <strong>Star</strong>. Match the previous character zero or more times;</li>
+  <li><code class="highlighter-rouge">+</code> <strong>Plus</strong>. Match the previous character one or more times;</li>
+  <li><code class="highlighter-rouge">?</code> <strong>Optional</strong>. Match the previous character zero or one time;</li>
+  <li><code class="highlighter-rouge"><span class="p">{</span><span class="err">n</span><span class="p">}</span></code> Match the previous character <em>exactly</em> n times;</li>
+  <li><code class="highlighter-rouge"><span class="p">{</span><span class="err">n,</span><span class="p">}</span></code>  Match the previous character <em>at least</em> n times;</li>
+  <li><code class="highlighter-rouge"><span class="p">{</span><span class="err">n,m</span><span class="p">}</span></code>  Match the previous character <em>at least</em> n times and <em>at most</em> m times;</li>
+  <li><code class="highlighter-rouge">?</code> <strong>Lazy</strong>. Match in a lazy(non-greedy) way or a less-match-way when follows a repeat character. In string ‘zoo’, <code class="highlighter-rouge">zo*?</code> will match ‘z’.</li>
+</ul>
+
+<h4 id="logic-characters">Logic Characters</h4>
+<ul>
+  <li><code class="highlighter-rouge">x|y</code> <strong>Alternation</strong>. Match <code class="highlighter-rouge">x</code> or <code class="highlighter-rouge">y</code>, basically not limits on character numbers. One should indicate the range explicitly;</li>
+  <li><code class="highlighter-rouge">[xyz]</code> <strong>Character Set</strong>. Match any character in it. A better way to express multiple <code class="highlighter-rouge">OR</code>s;</li>
+  <li><code class="highlighter-rouge">[^xyz]</code> <strong>Negated Set</strong>. Match any character that is <em>Not</em> in it;</li>
+  <li><code class="highlighter-rouge">a-z</code> <strong>Range</strong>. Match a character in the range <code class="highlighter-rouge">a</code> to <code class="highlighter-rouge">z</code>, in another words, whose char code lies in between 97 and 122.</li>
+</ul>
+
+<h4 id="special-characters">Special Characters</h4>
+<ul>
+  <li><code class="highlighter-rouge">\.</code> <strong>Escape Character</strong>. Match a dot “.” character;</li>
+  <li><code class="highlighter-rouge">\b</code> <strong>Word Boundary</strong>. Match a word boundary position such as whitespace, punctuation, or the start/end of the string. For example, <code class="highlighter-rouge">/ctrl\b-a/</code> will match “ctrl-a”;</li>
+  <li><code class="highlighter-rouge">\B</code> <strong>Not word boundary</strong>. Match any position that is not a word boundary. For example <code class="highlighter-rouge">/ne\B/</code> will match “never” but not “done”;</li>
+  <li><code class="highlighter-rouge">\cx</code> <strong>Control character escape</strong>. Escaped control character in the form \cZ. For example, <code class="highlighter-rouge">/\cM/</code> match a <em>CARRIAGE RETURN</em> character; Note that x have a range in a-z or A-Z to match the first 26 characters in ASCII table, otherwise it will match “\”, “c” and “x”;</li>
+  <li><code class="highlighter-rouge">\d</code> <strong>Digit</strong>. Match any digit character. Same as <code class="highlighter-rouge">[0-9]</code>;</li>
+  <li><code class="highlighter-rouge">\D</code> <strong>Not Digit</strong>. Match any character that is <em>NOT</em> a digit;</li>
+  <li><code class="highlighter-rouge">\f</code> <strong>Escape Character</strong>. Match a <em>FORM FEED</em> character, same as <code class="highlighter-rouge">\cl</code>. Like <code class="highlighter-rouge">\newpage</code> command in LaTex;</li>
+  <li><code class="highlighter-rouge">\n</code> <strong>Escape Character</strong>. Match a <em>LINE FEED</em> character, same as <code class="highlighter-rouge">\cj</code>;</li>
+  <li><code class="highlighter-rouge">\r</code> <strong>Escape Character</strong>. Match a <em>CARRIAGE RETURN</em> character, same as <code class="highlighter-rouge">\cm</code>;</li>
+  <li><code class="highlighter-rouge">\s</code> <strong>Whitespace</strong>. Match any whitespace character (spaces, tabs, line breaks);</li>
+  <li><code class="highlighter-rouge">\S</code> <strong>Not Whitespace</strong>. Match any character that is <em>NOT</em> a whitespace;</li>
+  <li><code class="highlighter-rouge">\t</code> <strong>Escape Character</strong>. Match a <em>TAB</em> character, same as <code class="highlighter-rouge">\ci</code>;</li>
+  <li><code class="highlighter-rouge">\v</code> <strong>Escape Character</strong>. Match a <em>VERTICAL TAB</em> character, same as <code class="highlighter-rouge">\ck</code>;</li>
+  <li><code class="highlighter-rouge">\w</code> <strong>Word</strong>. Match a word character (alphanumeric and underscore);</li>
+  <li><code class="highlighter-rouge">\W</code> <strong>Not Word</strong>. Match a character that is not a word;</li>
+  <li><code class="highlighter-rouge">\xFF</code> <strong>Hexadecimal Escape</strong>. Hexadecimal escaped character, match a character has char code “FF” in ASCII (must be a two digit hexadecimal).</li>
+</ul>
+
+<h4 id="groups-and-lookahead">Groups and Lookahead</h4>
+<ul>
+  <li><code class="highlighter-rouge">(pattern)</code> <strong>Capturing group</strong>. Groups multiple tokens together and creates a capture group for extracting a substring or using a <a href="#back-reference">back reference</a>.</li>
+  <li><code class="highlighter-rouge">(?:pattern)</code> <strong>Non-capturing group</strong>. Groups multiple tokens together without creating a capture group.</li>
+  <li><code class="highlighter-rouge">(?=pattern)</code> <strong>Positive Lookahead</strong>. Matches a group after the main expression without including it in the result. For example, <code class="highlighter-rouge">/x(?=liu)/</code> will match <code class="highlighter-rouge">x</code>, which followed by a <code class="highlighter-rouge">liu</code>. It is a non-capturing match.</li>
+  <li><code class="highlighter-rouge">(?!pattern)</code> <strong>Negative Lookahead</strong>. Specifies a group that can not match after the main expression. For example, <code class="highlighter-rouge">/x(?!liu)/</code> will match <code class="highlighter-rouge">x</code>, which is <em>NOT</em> followed by a <code class="highlighter-rouge">liu</code>. It is a capturing match.</li>
+</ul>
+
+<h2 id="terminologies">Terminologies</h2>
+
+<h4 id="back-reference">Back Reference</h4>
+<p>In a regular expression, when one pattern is surrounded by a pair of brackets, like <code class="highlighter-rouge">(pattern)</code>, the string this pattern matched will be captured and given a group number, in later regular expression, we could use <code class="highlighter-rouge">\num</code> to indicate that string. For example, regex <code class="highlighter-rouge">/(\w+{4})\1/</code> will match a 8-character string in which the last 4 characters are exactly the same as the previous 4, therefore, string ‘bilibili’ and ‘niconico’ will match.</p>
+
+<p>If we want tear apart a URL into its components, such as</p>
+
+<p><code class="highlighter-rouge">http://blog.xliu.info/Regular-Expression#back-reference</code></p>
+
+<p>We could use regular expression</p>
+
+<p><code class="highlighter-rouge">/(\w+):\/\/([^/:]+)(:\d*)?([^# ]*)/</code></p>
+
+<p>Therefore, in the above example,</p>
+<ul>
+  <li>Group $1 contains “http”</li>
+  <li>Group $2 contains “blog.xliu.info”</li>
+  <li>Group $3 contains “”</li>
+  <li>Group $4 contains “Regular-Expression”</li>
+</ul>
+
+<h4 id="capturingnot-capturing-group">Capturing/Not-Capturing Group</h4>
+
+<p>In back reference, we know that the group is used to store a string in it for a latter reference, such group is called capturing group. While, sometimes we do not want to refer to one group but we need to group them together, that is where non-capturing group shows up. Pattern like <code class="highlighter-rouge">(?:pattern)</code> will not store the string the pattern matched, which is, in some respect, more efficient.</p>
+
+<h2 id="simple-examples">Simple Examples</h2>
+
+<ul>
+  <li><strong>Integer &amp; Decimal Numbers</strong>. <code class="highlighter-rouge">/(?:\d*\.)?\d+/</code></li>
+  <li><strong>English Name</strong>. <code class="highlighter-rouge">/^[A-Z]['a-zA-Z]+(\s*[A-Z][-a-zA-Z]+)+(\s*(junior|jr|Jr|JR)\.?)?$/</code></li>
+  <li><strong>IP Address</strong>. <code class="highlighter-rouge">/^(((25[0-5])|(2[0-4]\d)|([01]?\d\d?))\.){3}((25[0-5])|(2[0-4]\d)|([01]?\d\d?))$/</code></li>
+  <li><strong>Email Address</strong>. <code class="highlighter-rouge">/^( |\t)*([\w._+-]+\s*(@|\[?a+t+\]?)+\s*([\w._+-]+\s*(\.|\[?d+o+t+\]?)+\s*)+[\w._+-]+)( |\t)*$/</code></li>
+</ul>
+
+<h2 id="references">References</h2>
+<blockquote>
+  <p><a href="http://www.codeyyy.com/regex/">Regular Expression-代码树</a></p>
+</blockquote>
+
+<blockquote>
+  <p><a href="http://www.regexr.com/">RegExr: Learn, Build &amp; Test RegEx</a></p>
+</blockquote>
 
 		
 	</div>
