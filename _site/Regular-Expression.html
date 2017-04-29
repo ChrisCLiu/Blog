@@ -149,10 +149,23 @@
 <p>In a word, DFA use string to test regular expression, while NFA use regular expression to test string. Therefore, we could tell why NFA will suffer a cannot-found-longest-match problem. However, NFA respects the regular expression with the biggest effort. We should balance our need between find a proper result and find the longest result.</p>
 
 <h2 id="basic-usage">Basic Usage</h2>
+
 <ul>
-  <li><code class="highlighter-rouge">\</code>	balka</li>
-  <li><code class="highlighter-rouge"><span class="p">{</span><span class="err">n,m</span><span class="p">}</span></code>	balsk</li>
+  <li><code class="highlighter-rouge">\</code>	Escape character, transfer next character to a special character. <code class="highlighter-rouge">\n</code> will match a line break;</li>
+  <li><code class="highlighter-rouge">^</code> Match the start point of the string;</li>
+  <li><code class="highlighter-rouge">$</code> Match the end point of the string;</li>
+  <li><code class="highlighter-rouge">*</code> Match the previous character zero or several times;</li>
+  <li><code class="highlighter-rouge">+</code> Match the previous character one or several times;</li>
+  <li><code class="highlighter-rouge">?</code> Match the previous character zero or one time;</li>
+  <li><code class="highlighter-rouge">?</code> Match in a un-greedy way if it follows other patern character.</li>
+  <li><code class="highlighter-rouge"><span class="p">{</span><span class="err">n</span><span class="p">}</span></code> Match the previous character <strong>exactly</strong> n times;</li>
+  <li><code class="highlighter-rouge"><span class="p">{</span><span class="err">n,</span><span class="p">}</span></code> Match the previous character <strong>at least</strong> n times;</li>
+  <li>
+    <p><code class="highlighter-rouge"><span class="p">{</span><span class="err">n,m</span><span class="p">}</span></code>	Match the previous character <strong>at least</strong> n times and <strong>at most</strong> m times;</p>
+  </li>
+  <li><code class="highlighter-rouge">.</code> Match any characters without <code class="highlighter-rouge">\n</code>.</li>
 </ul>
+
 
 		
 	</div>
