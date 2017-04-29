@@ -1,6 +1,6 @@
 Regular Expression (aka *regex* or *regexp*) is a sequence of characters that defines a certain search pattern to match a certain amount of text. The name *regular* is from related mathematical theory, we will not mention that in this blog.
 
-## Engineddd
+## Engine
 Generally, we have two kinds of regular expression engines.
 
 - **DFA**. DFA is based on the text itself, it ensures that the longest possible string will be matched. ***MySQL*** use DFA engine.

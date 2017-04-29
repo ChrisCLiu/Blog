@@ -4,7 +4,15 @@
 
 //Import
 @import "base", "mixin", "typography", "layout", "syntax.scss", "custom.scss";
+
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 body{
 font-family:'Montserrat',sans-serif
 } 
+code{
+	font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+	font-size: 14px;
+	letter-spacing: 1px;
+	background-color: #eeeeee;
+	color: #2f4f4f;
+}

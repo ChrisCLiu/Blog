@@ -4,7 +4,7 @@
  <title>Blog - Xiao Liu</title>
  <link href="http://localhost:4002/atom.xml" rel="self"/>
  <id>http://localhost:4002</id>
- <updated>2017-04-29T19:03:57+08:00</updated>
+ <updated>2017-04-29T19:07:20+08:00</updated>
  <author>
    <name>Xiao Liu</name>
    <uri>https://chriscliu.github.io</uri>
@@ -18,7 +18,7 @@
    <link href="http://localhost:4002/Regular-Expression"/>
    <id>http://localhost:4002/Regular-Expression</id>
    <updated>2017-04-27T00:00:00+08:00</updated>
-   <content type="html">&lt;p&gt;Regular Expression (aka &lt;em&gt;regex&lt;/em&gt; or &lt;em&gt;regexp&lt;/em&gt;) is a sequence of characters that defines a certain search pattern to match a certain amount of text. The name &lt;em&gt;regular&lt;/em&gt; is from related mathematical theory, we will not mention that in this blog.&lt;/p&gt; &lt;h2 id=&quot;engineddd&quot;&gt;Engineddd&lt;/h2&gt; &lt;p&gt;Generally, we have two kinds of regular expression...</content>
+   <content type="html">&lt;p&gt;Regular Expression (aka &lt;em&gt;regex&lt;/em&gt; or &lt;em&gt;regexp&lt;/em&gt;) is a sequence of characters that defines a certain search pattern to match a certain amount of text. The name &lt;em&gt;regular&lt;/em&gt; is from related mathematical theory, we will not mention that in this blog.&lt;/p&gt; &lt;h2 id=&quot;engine&quot;&gt;Engine&lt;/h2&gt; &lt;p&gt;Generally, we have two kinds of regular expression...</content>
  </entry>
 
  
