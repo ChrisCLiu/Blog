@@ -359,3 +359,8 @@
 
 ---
 
+#### prestige
+- **n.**
+	- [U]威信，威望，声望	 general respect or admiration felt for sb or sth because they have (or are connected with) high quality,social influence,success,etc.
+
+---
