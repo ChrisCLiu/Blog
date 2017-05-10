@@ -367,3 +367,68 @@
 	- [U]威信，威望，声望	 general respect or admiration felt for sb or sth because they have (or are connected with) high quality,social influence,success,etc.
 
 ---
+#### turbulent
+- **adj.**
+	- 骚动的；骚乱的；汹涌的	 violent;disorderly;uncontrolled;stormy
+
+---
+#### contagious
+- **adj.**
+	- （疾病）接触传染的	 (of a disease) that can be passed from one person to another by touch
+
+---
+#### sagacious
+- **adj.**
+	- 聪明的；睿智的
+
+---
+#### daunting
+- **adj.**
+	- 令人畏惧的
+
+---
+#### cinch
+- **n.**
+	- (马的)肚带；容易做的事情；必然发生的事情
+- **v.**
+	- 系肚带；确保
+
+---
+#### seethe
+- **v.**
+	- vi. (液体)沸腾	 (of a liquid) move about as if boiling
+	- vi. 激动，大怒	 be very excited or angry
+
+---
+#### presided
+- **v.**
+	- vi. 主持,主管	 be in charge of; lead
+
+---
+#### coherent
+- **adj.**
+	- 条理清楚的,连贯的; 前后一致的	 naturally or reasonably connected and therefore easy to understand; showing coherence
+
+---
+#### mundane
+- **adj.**
+	- 平凡的；世俗的；世界的
+
+---
+#### sanguine
+- **adj.**
+	- 乐天的；自信的；红润的
+- **n.**
+	- 血红色
+
+---
+#### flummoxed
+- **vt.**
+	- 使混乱；使迷惑；使失措
+
+---
+#### unwieldly
+- **adj.**
+	- 难以驾驭的
+
+---
